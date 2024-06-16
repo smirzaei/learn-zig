@@ -31,7 +31,7 @@ pub fn main() !void {
     try c.print();
 
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-    defer _ = gpa.deinit();
+    defer std.debug.assert(gpa.deinit() == .ok);
     const alloc = gpa.allocator();
 
     var pool: Thread.Pool = undefined;
