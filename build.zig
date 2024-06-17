@@ -30,11 +30,19 @@ pub fn build(b: *std.Build) void {
     b.installArtifact(lib);
 
     const exe = b.addExecutable(.{
-        .name = "zig-test",
+        .name = "learn-zig",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
     });
+
+    // Add C files
+    exe.addCSourceFile(.{ .file = .{ .path = "src/math.c" } });
+
+    // Where to find the C header files
+    exe.addIncludePath(.{ .path = "include/" });
+
+    // exe.linkLibC();
 
     // 1. Add the dependency
     const logz = b.dependency("logz", .{

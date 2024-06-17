@@ -5,7 +5,8 @@ const err = @import("error.zig");
 const hasmap = @import("hashmap.zig");
 const fmt = @import("fmt.zig");
 const arrayList = @import("array_list.zig");
+const c = @import("c.zig");
 
 pub fn main() !void {
-    try arrayList.main();
+    try c.main();
 }
