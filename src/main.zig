@@ -6,7 +6,8 @@ const hasmap = @import("hashmap.zig");
 const fmt = @import("fmt.zig");
 const arrayList = @import("array_list.zig");
 const c = @import("c.zig");
+const generic = @import("generic.zig");
 
 pub fn main() !void {
-    try c.main();
+    try generic.main();
 }
