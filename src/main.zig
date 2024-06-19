@@ -7,7 +7,8 @@ const fmt = @import("fmt.zig");
 const arrayList = @import("array_list.zig");
 const c = @import("c.zig");
 const generic = @import("generic.zig");
+const unionInterface = @import("interface_union.zig");
 
 pub fn main() !void {
-    try generic.main();
+    try unionInterface.main();
 }
