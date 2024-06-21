@@ -9,7 +9,23 @@ const c = @import("c.zig");
 const generic = @import("generic.zig");
 const unionInterface = @import("interface_union.zig");
 const interface = @import("interface.zig");
+const memory = @import("memory.zig");
 
 pub fn main() !void {
-    try interface.main();
+    try memory.main();
+}
+
+const User = struct {
+    id: usize,
+    phone: usize,
+};
+
+fn testFn() *User {
+    var u = User{
+        .id = 123,
+        .phone = 456,
+    };
+
+    std.debug.print("{}\n", .{u});
+    return &u;
 }
